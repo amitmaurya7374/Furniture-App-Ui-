@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_app/color.dart';
+import 'package:furniture_app/screens/detailPage.dart';
 import 'package:furniture_app/widgets/categorycar_widget.dart';
 import 'package:furniture_app/widgets/discount_card.dart';
 import 'package:furniture_app/widgets/headline_widget.dart';
@@ -120,9 +121,16 @@ class HomePage extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: <Widget>[
-                    CategoryCard(
-                      title: 'Living Room',
-                      imagePath: 'assets/images/living_room.png',
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.of(context).pushNamed(
+                          DetailPage.routeName,
+                        );
+                      },
+                      child: CategoryCard(
+                        title: 'Living Room',
+                        imagePath: 'assets/images/living_room.png',
+                      ),
                     ),
                     CategoryCard(
                       title: 'Bath Room',
@@ -185,7 +193,9 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 50,)
+              SizedBox(
+                height: 50,
+              )
             ],
           ),
         ),
@@ -193,4 +203,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-

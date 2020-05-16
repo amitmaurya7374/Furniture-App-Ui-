@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:furniture_app/screens/detailPage.dart';
 import 'package:furniture_app/screens/homepage.dart';
 
 void main() {
@@ -11,6 +12,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home:HomePage(),
+      routes: {
+        DetailPage.routeName:(context)=>DetailPage(),
+      },
     );
   }
 }
